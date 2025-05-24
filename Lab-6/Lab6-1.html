@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{   
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- <button onclick="change()">click</button>  -->
+     <button id="btn" onclick="start()">start</button>
+     <button id="btn" onclick="stop()">stop</button>
+     <!-- <button onclick="change()">change</button> -->
+    <script>
+        function change(){
+            // document.body.style.background = 'green';
+
+            let a = Math.ceil(Math.random()*255);
+            let b = Math.ceil(Math.random()*255);
+            let c = Math.ceil(Math.random()*255);
+            document.body.style.background=("rgb("+a+","+b+","+c+")");
+         }
+         function start(){
+             x = setInterval(change,50);
+         }
+         function stop(){
+            clearInterval(x);
+         }
+    </script>
+</body>
+</html>

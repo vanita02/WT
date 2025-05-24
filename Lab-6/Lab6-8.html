@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onmouseover="mouseover()" onmouseout="mouseout()">heading 1</h1>
+    <button onclick="gettime()">find time</button>
+    <div id="abc"></div>
+    <button onclick="changered()">red</button>
+    <button onclick="changegreen()">green</button>
+    <script>
+        function mouseover(){
+            document.body.style.color='yellow';
+        }
+        function mouseout(){
+            document.body.style.color='black';
+        }
+        function gettime(){
+            document.getElementById('abc').innerHTML=Date();
+        }
+        function changered(){
+            document.body.style.backgroundColor='red';
+        }
+        function changegreen(){
+            document.body.style.backgroundColor='green';
+        }
+    </script>
+</body>
+</html>

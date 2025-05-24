@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: 2px solid black; height: 300px; width: 300px; margin-left: 400px;">
+    <table align="center">
+        <h1 align="center">login</h1>
+        <tr>
+           <td style="font-size: 1.5rem;"> username : </td>
+            <td> <input type="text" placeholder="enter username" id="uname"></td>
+        </tr>
+       <tr>.</tr>
+        <tr>
+            <td style="font-size: 1.5rem;"> password : </td>
+             <td> <input type="password" placeholder="enter password" id="pass"></td>
+         </tr>
+         <br>
+         <tr>
+            <td ><button style="margin-left: 50px;" onclick="validation()">login</button></td>
+         </tr>
+         </table>
+        </div>
+    <script>
+        let a = document.getElementById('uname');
+        let b = document.getElementById('pass');
+        function validation(){
+            let usernamepatten = /^[a-zA-Z0-9]{8,}$/;
+            let passwordpatten = /^pass$/;
+
+            if(!usernamepatten.test(a.value)){
+                alert("username is not valid");
+            }
+            if(!passwordpatten.test(b.value)){
+                alert(" password is not valid");
+            }
+        }
+    </script>
+
+</body>
+</html>

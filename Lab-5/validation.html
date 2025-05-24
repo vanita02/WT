@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+        <table align="center">
+            <h1 align="center">validation</h1>
+            <tr>
+               <td> username : </td>
+                <td> <input type="text" placeholder="enter username" id="uname"></td>
+            </tr>
+           
+            <tr>
+                <td> password : </td>
+                 <td> <input type="password" placeholder="enter password" id="pass"></td>
+             </tr>
+             <tr>
+                <td> repeat password : </td>
+                 <td> <input type="password" placeholder="enter repeat password" id="rpass"></td>
+             </tr>
+             <tr>
+                <td> contact : </td>
+                <td><input type="number" placeholder="enter contact number" id="contact"></td>
+             </tr>
+             <tr>
+                <td> date of birth : </td>
+                 <td> <input type="date" id="dob"></td>
+             </tr>
+             <tr>
+                <td> age : </td>
+                 <td> <input type="text" id="age"></td>
+             </tr>
+             <tr>
+                <td> enrollment no : </td>
+                 <td> <input type="text" placeholder="enter enrollment" id="enrno"></td>
+             </tr>
+             <tr>
+                <td> email : </td>
+                 <td> <input type="email" placeholder="enter email" id="email"></td>
+             </tr>
+             <tr>
+                <td><input type="button" value="submit" onclick="chack()"></td>
+             </tr>
+        </table>
+    </html>
+    <script>
+        function chack(){
+            validation();
+            calage();
+        }
+        let a = document.getElementById('uname');
+        let b = document.getElementById('pass');
+        let rb = document.getElementById('rpass');
+        let d = document.getElementById('contact');
+        let e = document.getElementById('enrno');
+        let f = document.getElementById('email');
+        function validation(){
+            let usernamepatten = /^[a-zA-Z0-9]{8,}$/;
+            let passwordpatten = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]){8,12}$/;
+            let repeatpasswordpatten = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]){8,12}$/;
+            let contactpatten = /^[0-9]{10}$/;
+            let enrollmentpatten = /^2301[0-9]{7}$/;
+            let emailpatten = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(!usernamepatten.test(a.value)){
+            alert("username must be of minimum 8 characters");
+        }
+        if(!passwordpatten.test(b.value)){
+            alert(" password must contain at least 1 digit and 1 special character and should be between 8 to 12 characters");
+        }
+        if(rb.value!=b.value){
+            alert("password and repeat password must be same");
+        }
+        if(!contactpatten.test(d.value)){
+            alert("contact number is not valid");
+        }
+        if(!enrollmentpatten.test(e.value)){
+            alert(" enrollment must be of 11 digits");
+        }
+        if(!emailpatten.test(f.value)){
+            alert("email is not valid");
+        }
+    }
+    function calage(){
+        let dob = new Date(document.getElementById('dob').value);
+        let today = new Date();
+        let age = today.getFullYear()-dob.getFullYear();
+        console.log(age);
+        // document.getElementById.value('age');
+    }
+    </script>
+</body>
+</html>

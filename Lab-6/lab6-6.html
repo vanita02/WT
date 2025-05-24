@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+        <table align="center">
+            <tr>
+                <h1 align="center">Student registretion</h1>
+            </tr>
+            
+            <tr>
+                <td>first name:</td>
+                <td><input type="text" placeholder="enter first name" id="fname"></td>
+            </tr>
+            <tr>
+                <td>last name:</td>
+                <td><input type="text" placeholder="enter last name" id="lname"></td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td><input type="email" placeholder="enter email address" id="email"></td>
+            </tr>
+            <tr>
+                <td>contact:</td>
+                <td><input type="text" placeholder="enter contact number" id="contact"></td>
+            </tr>
+            <tr>
+                <td>city:</td>
+                <td><select>
+                    <option>rajkot</option>
+                    <option>morbi</option>
+                    <option>jamnagar</option>
+                    <option>ahmedabad</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>address:</td>
+                <td><input type="text" placeholder="enter your address" id="address"></td>
+            </tr>
+            <tr>
+                    <td>gender:</td>
+                    <td>
+                        <input type="radio" name="gender">male
+                        <input type="radio" name="gender">female
+                        <input type="radio" name="gender">other
+                    </td>
+            </tr>
+            <tr>
+                <td>date of birth:</td>
+                <td><input type="Date" id="dob"></td>
+            </tr>
+            <tr>
+                <td>cpi:</td>
+                <td><input type="text" id="cpi"></td>
+            </tr>
+            <tr>
+                <!-- <td>submit</td> -->
+                <td align="center"><input type="button" id="submit" value="submit"onclick="validation()"></td>
+                <td><input type="button" value="reset"</td>
+            </tr>
+        </table>
+    </html>
+    <script>
+            let a=document.getElementById('fname');
+            let b=document.getElementById('lname');
+            let c=document.getElementById('email');
+            let d=document.getElementById('contact');
+            let e=document.getElementById('address');
+            let f=document.getElementById('cpi');
+            
+        function validation(){
+            
+            let firstnamepatten = /^[a-zA-Z0-9]{8,}$/;
+            let lastnamepatten = /^[a-zA-Z0-9]{8,}$/;
+            let emailpatten = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let contactpatten = /^[0-9]{10}$/;
+            let addresspatten = /^[a-zA-Z0-9]{8,}$/;
+            let cpipatten = /^[0-9]/;
+            if(!firstnamepatten.test(a.value)){
+                alert("please enter valid name");
+            }
+            if(!lastnamepatten.test(b.value)){
+                alert("please enter valid last name");
+            }
+            if(!emailpatten.test(c.value)){
+                alert("please enter email address");
+            }
+            if(!contactpatten.test(d.value)){
+                alert("please enter valid number");
+            }
+            if(!addresspatten.test(e.value)){
+                alert("please enter valid address");
+            }
+            if(!cpipatten.test(f.value) && f.value >=10){
+                alert("please enter right cpi");
+            }
+        }
+    </script>
+</body>
+</html>
